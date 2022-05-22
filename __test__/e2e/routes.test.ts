@@ -68,6 +68,27 @@ describe('Routes endpoint suite test', () => {
 				expect(result.body).toStrictEqual(responseExpected);
 			});
 		});
+
+		describe('/user/courses endpoint', () => {
+			it('should respond 401', async () => {
+				const result = await request(app)
+					.post('/user/courses')
+					.send({});
+
+				expect(result.status).toBe(401);
+			});
+		});
+
+		describe('/user/courses endpoint', () => {
+			it('should respond 403', async () => {
+				const result = await request(app)
+					.post('/user/courses')
+					.set('Authorization', `Bearer faketoken`)
+					.send({});
+
+				expect(result.status).toBe(403);
+			});
+		});
 	});
 
 	describe('General endpoints', () => {
