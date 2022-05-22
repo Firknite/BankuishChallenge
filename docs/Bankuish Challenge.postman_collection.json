@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "c541de84-53b0-4027-95ce-30897c631e67",
+		"name": "Bankuish Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "health check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/health",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sort user's courses",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhvbGEiLCJpYXQiOjE2NTMxNTM1NjAsImV4cCI6MTY1NDE1MzU1OX0.CARg63zz_X3oXKqNbK4KvNkSgGBtKraOAF8gJQN4tKM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"30ecc27b-9df7-4dd3-b52f-d001e79bd035\",\r\n    \"courses\": [\r\n        {\r\n            \"desiredCourse\": \"PortfolioConstruction\",\r\n            \"requiredCourse\": \"PortfolioTheories\"\r\n        },\r\n        {\r\n            \"desiredCourse\": \"InvestmentManagement\",\r\n            \"requiredCourse\": \"Investment\"\r\n        },\r\n        {\r\n            \"desiredCourse\": \"Investment\",\r\n            \"requiredCourse\": \"Finance\"\r\n        },\r\n        {\r\n            \"desiredCourse\": \"PortfolioTheories\",\r\n            \"requiredCourse\": \"Investment\"\r\n        },\r\n        {\r\n            \"desiredCourse\": \"InvestmentStyle\",\r\n            \"requiredCourse\": \"InvestmentManagement\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/user/courses",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a new token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"hola\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/createNewToken",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"createNewToken"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

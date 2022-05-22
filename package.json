@@ -1,0 +1,34 @@
+{
+	"name": "bankuish---nodejs-challenge",
+	"version": "1.0.0",
+	"description": "code challenge for bankuish",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.cjs",
+		"start:dev": "nodemon index.cjs",
+		"test": "jest --coverage --forceExit",
+		"test:coverage": "jest --coverage"
+	},
+	"keywords": [
+		"nodejs",
+		"docker",
+		"jest",
+		"jwt"
+	],
+	"author": "Rigoberto Torres",
+	"license": "ISC",
+	"dependencies": {
+		"@types/jest": "^27.5.1",
+		"dotenv": "^16.0.1",
+		"express": "^4.18.1",
+		"jest": "^28.1.0",
+		"jsonwebtoken": "^8.5.1",
+		"supertest": "^6.2.3"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.16"
+	},
+	"jest": {
+		"testEnvironment": "node"
+	}
+}
