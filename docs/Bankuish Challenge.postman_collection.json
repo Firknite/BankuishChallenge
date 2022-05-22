@@ -30,7 +30,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhvbGEiLCJpYXQiOjE2NTMxNTM1NjAsImV4cCI6MTY1NDE1MzU1OX0.CARg63zz_X3oXKqNbK4KvNkSgGBtKraOAF8gJQN4tKM",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RpbmciLCJpYXQiOjE2NTMyNDIzOTQsImV4cCI6MTY1Mzg0NzE5NH0.teJ8YJxJmOxyD1eEsRSKCBV2wvP2UPwznwDMvPCWKP4",
 							"type": "string"
 						}
 					]
@@ -57,7 +57,69 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Sort user's courses",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"30ecc27b-9df7-4dd3-b52f-d001e79bd035\",\r\n    \"courses\": [\r\n        {\r\n            \"desiredCourse\": \"PortfolioConstruction\",\r\n            \"requiredCourse\": \"PortfolioTheories\"\r\n        },\r\n        {\r\n            \"desiredCourse\": \"InvestmentManagement\",\r\n            \"requiredCourse\": \"Investment\"\r\n        },\r\n        {\r\n            \"desiredCourse\": \"Investment\",\r\n            \"requiredCourse\": \"Finance\"\r\n        },\r\n        {\r\n            \"desiredCourse\": \"PortfolioTheories\",\r\n            \"requiredCourse\": \"Investment\"\r\n        },\r\n        {\r\n            \"desiredCourse\": \"InvestmentStyle\",\r\n            \"requiredCourse\": \"InvestmentManagement\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/courses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"courses"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "413"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19d-jCVIweLQ4W7CSRlvXb9jaV9fkrw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 May 2022 18:00:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userId\": \"30ecc27b-9df7-4dd3-b52f-d001e79bd035\",\n    \"courses\": [\n        {\n            \"desiredCourse\": \"Investment\",\n            \"requiredCourse\": \"Finance\"\n        },\n        {\n            \"desiredCourse\": \"InvestmentManagement\",\n            \"requiredCourse\": \"Investment\"\n        },\n        {\n            \"desiredCourse\": \"PortfolioTheories\",\n            \"requiredCourse\": \"Investment\"\n        },\n        {\n            \"desiredCourse\": \"InvestmentStyle\",\n            \"requiredCourse\": \"InvestmentManagement\"\n        },\n        {\n            \"desiredCourse\": \"PortfolioConstruction\",\n            \"requiredCourse\": \"PortfolioTheories\"\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Get a new token",
@@ -66,7 +128,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"hola\"\r\n}",
+					"raw": "{\r\n    \"username\": \"testing\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -74,17 +136,77 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/createNewToken",
+					"raw": "{{baseUrl}}/getToken",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
-						"createNewToken"
+						"getToken"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get a new token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "168"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a8-/vx9DI97pKR71Xp+jyiK8IuGQCQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 22 May 2022 17:59:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RpbmciLCJpYXQiOjE2NTMyNDIzOTQsImV4cCI6MTY1Mzg0NzE5NH0.teJ8YJxJmOxyD1eEsRSKCBV2wvP2UPwznwDMvPCWKP4\"\n}"
+				}
+			]
 		}
 	]
 }
