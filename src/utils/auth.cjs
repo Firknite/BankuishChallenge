@@ -1,9 +1,10 @@
 const jwt = require('jsonwebtoken');
 
-const generateAccessToken = (username) =>
-	jwt.sign({ username }, process.env.TOKEN_SECRET, {
+const generateAccessToken = (username) => ({
+	token: jwt.sign({ username }, process.env.TOKEN_SECRET, {
 		expiresIn: process.env.TOKEN_EXPIRES,
-	});
+	}),
+});
 
 function authenticateToken(req, res, next) {
 	const authHeader = req.headers['authorization'];

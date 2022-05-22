@@ -9,9 +9,7 @@ router.get('/health', (req, res) =>
 );
 
 router.post('/getToken', (req, res) => {
-	res.status(200).send({
-		token: generateAccessToken(req.body.username),
-	});
+	res.status(200).send(generateAccessToken(req.body.username));
 });
 
 router.use('/user', usersRouting(router, authenticateToken));
